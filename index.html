@@ -1,1 +1,440 @@
-<html><head><meta http-equiv=Content-Type content="text/html; charset=utf-16"></head><body><DIV STYLE="text-align:Left;font-family:Segoe UI;font-style:normal;font-weight:normal;font-size:12;color:#000000;"><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>&lt;!DOCTYPE html&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>&lt;html lang="ru"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>&lt;head&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>    &lt;meta charset="UTF-8"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>    &lt;title&gt;Галерея картин в интерьере&lt;/title&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>    &lt;style&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        * {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            margin: 0;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            padding: 0;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            box-sizing: border-box;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        body {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            font-family: 'Georgia', serif;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            background: #f5f5f5;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            display: flex;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            justify-content: center;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            align-items: center;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            min-height: 100vh;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            padding: 20px;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        .album-container {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            perspective: 1500px;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            width: 100%;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            max-width: 1200px;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        .album {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            position: relative;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            width: 100%;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            height: 600px;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            transform-style: preserve-3d;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        .page {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            position: absolute;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            width: 50%;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            height: 100%;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            top: 0;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            background: white;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            box-shadow: 0 10px 30px rgba(0,0,0,0.2);</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            display: flex;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            justify-content: center;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            align-items: center;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            padding: 20px;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            backface-visibility: hidden;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            border: 1px solid #ddd;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        .left-page {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            left: 0;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            border-right: 1px solid #ddd;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        .right-page {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            right: 0;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            border-left: 1px solid #ddd;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        .page-content {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            width: 100%;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            height: 100%;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            display: flex;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            flex-direction: column;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            justify-content: center;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            align-items: center;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        .page img {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            max-width: 90%;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            max-height: 80%;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            object-fit: contain;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            border-radius: 5px;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            box-shadow: 0 5px 15px rgba(0,0,0,0.1);</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        .page-number {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            position: absolute;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            bottom: 20px;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            font-size: 14px;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            color: #666;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        .navigation {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            display: flex;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            justify-content: center;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            gap: 20px;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            margin-top: 30px;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        button {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            padding: 12px 25px;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            font-size: 16px;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            background: #2c3e50;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            color: white;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            border: none;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            border-radius: 5px;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            cursor: pointer;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            transition: background 0.3s;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        button:hover {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            background: #34495e;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        button:disabled {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            background: #bdc3c7;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            cursor: not-allowed;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        .title {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            text-align: center;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            margin-bottom: 10px;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            font-size: 18px;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            color: #333;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            font-weight: bold;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        /* Анимация перелистывания */</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        .album.flipped {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            transform: rotateY(-180deg);</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        .right-page {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            transform: rotateY(180deg);</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>    &lt;/style&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>&lt;/head&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>&lt;body&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>    &lt;div class="album-container"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        &lt;div class="album" id="album"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;!-- Страница 1 --&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;div class="page left-page"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                &lt;div class="page-content"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;div class="title"&gt;Картина 1&lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;img src="</SPAN></SPAN><SPAN><SPAN>https://i.ibb.co/XZV69W6p/1.jpg</SPAN></SPAN><SPAN><SPAN>" alt="Картина 1"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;div class="page-number"&gt;Страница 1&lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                &lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;div class="page right-page"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                &lt;div class="page-content"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;div class="title"&gt;Картина 1 в интерьере&lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;img src="</SPAN></SPAN><SPAN><SPAN>https://i.ibb.co/XkCwTWS9/1-2.jpg</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>" alt="Интерьер 1"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;div class="page-number"&gt;Страница 2&lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                &lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;/div&gt;</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;!-- Страница 2 --&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;div class="page left-page"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                &lt;div class="page-content"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;div class="title"&gt;Картина 2&lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;img src="</SPAN></SPAN><SPAN><SPAN>https://i.ibb.co/MxQSz5Cr/2.jpg</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>" alt="Картина 2"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;div class="page-number"&gt;Страница 3&lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                &lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;div class="page right-page"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                &lt;div class="page-content"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;div class="title"&gt;Картина 2 в интерьере&lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;img src=</SPAN></SPAN><SPAN><SPAN>https://i.ibb.co/Y4HPMHqz/2-2.jpg</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>" alt="Интерьер 2"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;div class="page-number"&gt;Страница 4&lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                &lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;/div&gt;</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;!-- Страница 3 --&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;div class="page left-page"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                &lt;div class="page-content"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;div class="title"&gt;Картина 3&lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;img src="</SPAN></SPAN><SPAN><SPAN>https://i.ibb.co/SXymrZPY/3.jpg</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>" alt="Картина 3"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;div class="page-number"&gt;Страница 5&lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                &lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;div class="page right-page"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                &lt;div class="page-content"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;div class="title"&gt;Картина 3 в интерьере&lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;img src="</SPAN></SPAN><SPAN><SPAN>https://i.ibb.co/XryJKPbZ/3-2.jpg</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>" alt="Интерьер 3"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    &lt;div class="page-number"&gt;Страница 6&lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                &lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        &lt;/div&gt;</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        &lt;div class="navigation"&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;button id="prevBtn" disabled&gt;Назад&lt;/button&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            &lt;button id="nextBtn"&gt;Вперед&lt;/button&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        &lt;/div&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>    &lt;/div&gt;</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>    &lt;script&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        class InteractiveAlbum {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            constructor() {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.album = document.getElementById('album');</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.pages = document.querySelectorAll('.page');</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.prevBtn = document.getElementById('prevBtn');</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.nextBtn = document.getElementById('nextBtn');</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.currentPage = 0;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.totalPages = this.pages.length / 2; // Каждый разворот - 2 страницы</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.init();</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            init() {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.updatePages();</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.addEventListeners();</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            addEventListeners() {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.prevBtn.addEventListener('click', () =&gt; this.prevPage());</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.nextBtn.addEventListener('click', () =&gt; this.nextPage());</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                // Добавляем поддержку клавиатуры</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                document.addEventListener('keydown', (e) =&gt; {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    if (e.key === 'ArrowLeft') this.prevPage();</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    if (e.key === 'ArrowRight') this.nextPage();</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                });</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                // Добавляем свайпы на мобильных устройствах</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                let startX = 0;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.album.addEventListener('touchstart', (e) =&gt; {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    startX = e.touches[0].clientX;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                });</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.album.addEventListener('touchend', (e) =&gt; {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    const endX = e.changedTouches[0].clientX;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    const diff = startX - endX;</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    if (Math.abs(diff) &gt; 50) { // Минимальное расстояние свайпа</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                        if (diff &gt; 0) this.nextPage();</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                        else this.prevPage();</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    }</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                });</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            nextPage() {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                if (this.currentPage &lt; this.totalPages - 1) {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    this.currentPage++;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    this.updatePages();</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                }</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            prevPage() {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                if (this.currentPage &gt; 0) {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    this.currentPage--;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    this.updatePages();</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                }</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            updatePages() {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                // Сбрасываем все страницы</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.pages.forEach(page =&gt; {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    page.style.zIndex = '0';</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    page.style.display = 'none';</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                });</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                // Показываем текущий разворот</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                const leftPageIndex = this.currentPage * 2;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                const rightPageIndex = this.currentPage * 2 + 1;</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                if (this.pages[leftPageIndex]) {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    this.pages[leftPageIndex].style.display = 'flex';</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    this.pages[leftPageIndex].style.zIndex = '2';</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                if (this.pages[rightPageIndex]) {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    this.pages[rightPageIndex].style.display = 'flex';</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    this.pages[rightPageIndex].style.zIndex = '2';</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                // Обновляем состояние кнопок</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.prevBtn.disabled = this.currentPage === 0;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.nextBtn.disabled = this.currentPage === this.totalPages - 1;</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                // Добавляем анимацию перелистывания</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                this.album.classList.add('flipped');</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                setTimeout(() =&gt; {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                    this.album.classList.remove('flipped');</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>                }, 800);</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            }</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        }</SPAN></SPAN></P><P /><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        // Инициализация альбома когда страница загружена</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        document.addEventListener('DOMContentLoaded', () =&gt; {</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>            new InteractiveAlbum();</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>        });</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>    &lt;/script&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>&lt;/body&gt;</SPAN></SPAN></P><P STYLE="font-size:14.666666666666666;margin:0 0 14 0;"><SPAN><SPAN>&lt;/html&gt;</SPAN></SPAN></P></DIV></body></html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РЕЗОНАНС МАТЕРИИ | Арт-альбом</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Обложка */
+        .cover {
+            height: 100vh;
+            background: linear-gradient(45deg, #0a0a0a 0%, #2d2d2d 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .cover-image {
+            width: 300px;
+            height: 400px;
+            background: url('https://i.ibb.co/XZV69W6p/1.jpg') center/cover;
+            margin-bottom: 2rem;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .cover-title {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .cover-subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            opacity: 0.8;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Галерея */
+        .gallery {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .artwork-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 6rem;
+            align-items: start;
+        }
+
+        .artwork-image {
+            position: relative;
+            background: #2a2a2a;
+            border: 1px solid #404040;
+            transition: transform 0.3s ease;
+        }
+
+        .artwork-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .artwork-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .artwork-image img:hover {
+            opacity: 0.9;
+        }
+
+        .artwork-info {
+            padding: 1.5rem 0;
+        }
+
+        .artwork-title {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        .artwork-details {
+            font-size: 0.9rem;
+            color: #ccc;
+            letter-spacing: 0.05em;
+        }
+
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            position: relative;
+            margin: 2% auto;
+            width: 90%;
+            max-width: 1200px;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 3rem;
+            color: #fff;
+            cursor: pointer;
+            z-index: 1001;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #ccc;
+        }
+
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-button:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .prev { left: 2rem; }
+        .next { right: 2rem; }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .cover-title {
+                font-size: 2rem;
+                letter-spacing: 0.2em;
+            }
+
+            .cover-image {
+                width: 200px;
+                height: 300px;
+            }
+
+            .artwork-pair {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-button {
+                font-size: 1.5rem;
+                padding: 0.5rem;
+            }
+
+            .prev { left: 1rem; }
+            .next { right: 1rem; }
+        }
+
+        /* Прогресс бар */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #fff, #ccc);
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <!-- Обложка -->
+    <section class="cover">
+        <div class="cover-image"></div>
+        <h1 class="cover-title">РЕЗОНАНС МАТЕРИИ</h1>
+        <p class="cover-subtitle">Собрание работ</p>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- Галерея -->
+    <section class="gallery" id="gallery">
+        <!-- Пары картин будут сгенерированы JavaScript -->
+    </section>
+
+    <!-- Модальное окно -->
+    <div class="modal" id="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <button class="nav-button prev" onclick="changeImage(-1)">&#10094;</button>
+        <button class="nav-button next" onclick="changeImage(1)">&#10095;</button>
+        <div class="modal-content">
+            <img class="modal-image" id="modalImage" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        // Данные картин
+        const artworks = [
+            {
+                painting: 'https://i.ibb.co/XZV69W6p/1.jpg',
+                interior: 'https://i.ibb.co/XkCwTWS9/1-2.jpg',
+                title: 'ЭНЕРГИЯ ТИШИНЫ',
+                details: 'Смешанная техника, 120×80 см'
+            },
+            {
+                painting: 'https://i.ibb.co/MxQSz5Cr/2.jpg',
+                interior: 'https://i.ibb.co/Y4HPMHqz/2-2.jpg',
+                title: 'ГРАДИЕНТ ПАМЯТИ',
+                details: 'Акрил, холст, 100×100 см'
+            },
+            {
+                painting: 'https://i.ibb.co/SXymrZPY/3.jpg',
+                interior: 'https://i.ibb.co/XryJKPbZ/3-2.jpg',
+                title: 'УЛЬТРАМАРИНОВАЯ ГЛУБИНА',
+                details: 'Масло, текстурная паста, 150×100 см'
+            },
+            {
+                painting: 'https://i.ibb.co/CKwcxk4X/4.jpg',
+                interior: 'https://i.ibb.co/nMTr01T9/4-2.jpg',
+                title: 'ЗОЛОТАЯ САЖА',
+                details: 'Смешанная техника, сусальное золото, 140×90 см'
+            },
+            {
+                painting: 'https://i.ibb.co/1fNh8yGh/5.jpg',
+                interior: 'https://i.ibb.co/1fc2cMwk/5-2.jpg',
+                title: 'ТЕПЛО ХОЛОДА',
+                details: 'Акрил, холст, 110×80 см'
+            },
+            {
+                painting: 'https://i.ibb.co/7J0478jj/6.jpg',
+                interior: 'https://i.ibb.co/1fQhrLMP/6-2.jpg',
+                title: 'РЖАВЧАНАЯ ВЕСНА',
+                details: 'Оксиды, акрил, 130×90 см'
+            },
+            {
+                painting: 'https://i.ibb.co/bgX4xnT8/7.jpg',
+                interior: 'https://i.ibb.co/n84FPQH7/7-2.jpg',
+                title: 'СВЕТ ИЗНУТРИ',
+                details: 'Флюоресцентный акрил, 120×120 см'
+            },
+            {
+                painting: 'https://i.ibb.co/NGZq9Yz/8.jpg',
+                interior: 'https://i.ibb.co/99gPyFBj/8-2.jpg',
+                title: 'ПЕСОК ВРЕМЕНИ',
+                details: 'Песок, акрил, текстурный гель, 100×150 см'
+            },
+            {
+                painting: 'https://i.ibb.co/s4XSjJH/9.jpg',
+                interior: 'https://i.ibb.co/nssTp8tZ/9-2.jpg',
+                title: 'ТУМАННОЕ УТРО',
+                details: 'Акрил, левкас, 90×120 см'
+            },
+            {
+                painting: 'https://i.ibb.co/ZRN8ryJh/10.jpg',
+                interior: 'https://i.ibb.co/ynkdmZWq/10-2.jpg',
+                title: 'ЛАВОВЫЙ ПОТОК',
+                details: 'Текстурная паста, акрил, 140×100 см'
+            },
+            {
+                painting: 'https://i.ibb.co/v4vwQBmY/11.jpg',
+                interior: 'https://i.ibb.co/R42BTq1K/11-2.jpg',
+                title: 'МЕТАЛЛИЧЕСКИЙ ШЕПОТ',
+                details: 'Металлические пигменты, акрил, 130×90 см'
+            }
+        ];
+
+        let currentImageIndex = 0;
+        let allImages = [];
+
+        // Генерация галереи
+        function generateGallery() {
+            const gallery = document.getElementById('gallery');
+            
+            artworks.forEach((artwork, index) => {
+                const pair = document.createElement('div');
+                pair.className = 'artwork-pair';
+                
+                pair.innerHTML = `
+                    <div class="artwork-item">
+                        <div class="artwork-image">
+                            <img src="${artwork.painting}" 
+                                 alt="${artwork.title}" 
+                                 onclick="openModal(${index * 2})">
+                        </div>
+                        <div class="artwork-info">
+                            <h3 class="artwork-title">${artwork.title}</h3>
+                            <p class="artwork-details">${artwork.details}</p>
+                        </div>
+                    </div>
+                    <div class="artwork-item">
+                        <div class="artwork-image">
+                            <img src="${artwork.interior}" 
+                                 alt="${artwork.title} в интерьере" 
+                                 onclick="openModal(${index * 2 + 1})">
+                        </div>
+                        <div class="artwork-info">
+                            <h3 class="artwork-title">${artwork.title}</h3>
+                            <p class="artwork-details">В интерьере</p>
+                        </div>
+                    </div>
+                `;
+                
+                gallery.appendChild(pair);
+                
+                // Собираем все изображения для модального окна
+                allImages.push(artwork.painting, artwork.interior);
+            });
+        }
+
+        // Модальное окно
+        function openModal(index) {
+            currentImageIndex = index;
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modalImage');
+            
+            modal.style.display = 'block';
+            modalImage.src = allImages[currentImageIndex];
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            
+            if (currentImageIndex >= allImages.length) {
+                currentImageIndex = 0;
+            } else if (currentImageIndex < 0) {
+                currentImageIndex = allImages.length - 1;
+            }
+            
+            document.getElementById('modalImage').src = allImages[currentImageIndex];
+        }
+
+        // Закрытие модального окна по клику вне изображения
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Управление клавиатурой
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById('modal');
+            if (modal.style.display === 'block') {
+                if (event.key === 'Escape') closeModal();
+                if (event.key === 'ArrowLeft') changeImage(-1);
+                if (event.key === 'ArrowRight') changeImage(1);
+            }
+        });
+
+        // Прогресс бар прокрутки
+        window.addEventListener('scroll', function() {
+            const winHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.pageYOffset;
+            const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+            document.querySelector('.progress-bar').style.width = scrollPercent + '%';
+        });
+
+        // Плавная прокрутка
+        document.querySelector('.scroll-indicator').addEventListener('click', function() {
+            document.getElementById('gallery').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+
+        // Инициализация
+        generateGallery();
+    </script>
+</body>
+</html>
